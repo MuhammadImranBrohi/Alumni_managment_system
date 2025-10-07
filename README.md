@@ -3,8 +3,6 @@
 An Alumni Management System built with **Laravel**.  
 This system allows universities or colleges to maintain connections with alumni, manage events, share updates, and build a professional alumni network.  
 
----
-
 ## Features
 
 - Alumni registration and login
@@ -22,16 +20,15 @@ This system allows universities or colleges to maintain connections with alumni,
 - **Version Control:** Git & GitHub  
 
 ## Project Structure
-
- app/ # Core application code
-bootstrap/ # Laravel bootstrap files
-config/ # Configuration files
-database/ # Migrations, seeders, factories
-public/ # Public assets (index.php, CSS, JS)
-resources/ # Views (Blade templates), language files
-routes/ # Web and API routes
-storage/ # Logs, cache, uploads
-tests/ # Unit and feature test
+- app/ # Core application code
+- bootstrap/ # Laravel bootstrap files
+- config/ # Configuration files
+- database/ # Migrations, seeders, factories
+- public/ # Public assets (index.php, CSS, JS)
+- resources/ # Views (Blade templates), language files
+- routes/ # Web and API routes
+- storage/ # Logs, cache, uploads
+- tests/ # Unit and feature test
 
 ## tech Stack
 
@@ -55,5 +52,5 @@ tests/ # Unit and feature test
 
 ## License
 
- MIT License
- Apache License
+- MIT License
+- Apache License

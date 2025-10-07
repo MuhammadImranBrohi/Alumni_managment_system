@@ -39,11 +39,11 @@ This system allows universities or colleges to maintain connections with alumni,
 ## ⚡ Installation Guide
 
 1. git clone https://github.com/MuhammadImranBrohi/Alumni_managment_system.git
-2. composer install >> README.md
-3. cp .env.example .env >> README.md
-4. php artisan key:generate >> README.md
-5. php artisan migrate --seed >> README.md
-6. php artisan serve >> README.md
+2. composer install
+3. cp .env.example .env
+4. php artisan key:generate
+5. php artisan migrate --seed
+6. php artisan serve
 
 ## Author
 
@@ -54,3 +54,7 @@ This system allows universities or colleges to maintain connections with alumni,
 
 - MIT License
 - Apache License
+
+## Changes
+
+changes can be made but the person have to discuss the changes and amendments in the code first 

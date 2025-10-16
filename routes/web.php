@@ -1,83 +1,70 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
 
 
 Route::view('/', 'index');
 
-//  making the route for meeting
-Route::view('/meeting', 'meetings');
-
-//  now route for meeting details
-Route::view('/meeting-details', 'meeting-details');
+Route::view('/meeting', 'meetings'); //  making the route for meeting
+Route::view('/meeting-details', 'meeting-details'); //  now route for meeting details
 
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
 
-Route::view('profile', 'profile')
-    ->middleware(['auth'])
-    ->name('profile');
+route::get('/index', function () {
+    return view('/index'); // alumni.blade.php
+})->name('/index');
 
-require __DIR__.'/auth.php';
+Route::prefix('alumni_admin')->group(function () {
+    Route::get('/index', [AdminController::class, 'dashboard']);
+    Route::get('/graduated_alumni', [AdminController::class, 'graduated']);
+    Route::get('/view_edit_alumni', [AdminController::class, 'viewEdit']);
+    Route::get('/add_alumni', [AdminController::class, 'addAlumni']);
 
-// alumni-admin dashboard routing  here
-Route::get('/admin-index', function () {
-    return view('alumni-admin.admin-index'); // index.blade.php
-})->name('admin-index');
+    Route::get('/post_news', [AdminController::class, 'postNews']);
+    Route::get('/publish_events', [AdminController::class, 'publishEvents']);
 
-// route for dashboard
-Route::get('/admin-dashboard', function () {
-    return view('alumni-admin.admin-dashboard'); // index.blade.php
-})->name('admin-dashboard');
+    Route::get('/view_admins', [AdminController::class, 'viewAdmins']);
+    Route::get('/assign_roles', [AdminController::class, 'assignRoles']);
+    Route::get('/create_roles', [AdminController::class, 'createRoles']);
 
-Route::get('/post-news', function () {
-    return view('alumni-admin.post-news'); // index.blade.php
-})->name('post-news');
-Route::get('/post-events', function () {
-    return view('alumni-admin.post-events'); // index.blade.php
-})->name('post-events');
+    Route::get('/post_jobs', [AdminController::class, 'postJobs']);
+    Route::get('/industry_posts', [AdminController::class, 'industryPosts']);
 
-Route::get('/tables-data', function () {
-    return view('alumni-admin.tables-data');   // view/edit alumni
-})->name('tables-data');
+    Route::get('/track_participants', [AdminController::class, 'trackParticipants']);
+    Route::get('/view_all_alumni', [AdminController::class, 'viewAllAlumni']);
 
-Route::get('/form-adv', function () {
-    return view('alumni-admin.form-adv');     // add alumni
-})->name('form-adv');
+    Route::get('/installation_guide', [AdminController::class, 'installationGuide']);
+    Route::get('/faq', [AdminController::class, 'faq']);
+    Route::get('/license', [AdminController::class, 'license']);
+});
 
-Route::get('/post-news', function () {
-    return view('alumni-admin.post-news');    // Post News
-})->name('post-news');
 
-Route::get('/post-events', function () {
-    return view('alumni-admin.post-events');  // Publish Events
-})->name('post-events');
+// Route::view('dashboard', 'dashboard')
+//     ->middleware(['auth', 'verified'])
+//     ->name('dashboard');
 
-Route::get('/post-job', function () {
-    return view('alumni-admin.post-job');     // Post Job/Internship
-})->name('post-job');
+// Route::view('profile', 'profile')
+//     ->middleware(['auth'])
+//     ->name('profile');
 
-Route::get('/alumni-industries', function () {
-    return view('alumni-admin.alumni-indusries'); // Alumni-Industries
-})->name('alumni-indusries');
 
-Route::get('/all-alumni', function () {
-    return view('alumni-admin.all-alumni');   // View All Alumni
-})->name('all-alumni');
+// require __DIR__.'/auth.php';
 
-Route::get('/participants', function () {
-    return view('alumni-admin.participants'); // Track Event Participants
-})->name('participants');
+/* The code snippet you provided is a series of Git commands that are typically used to initialize a
+new Git repository, add a README.md file, commit the changes, set the branch to main, add a remote
+repository as the origin, and push the changes to the remote repository. */
 
-// route for view-admin
-Route::get('/view-admin', function () {
-    return view('alumni-admin.view-admin'); // index.blade.php
-})->name('view-admin');
+// echo "# Alumni_management_system" >> README.md
+// git init
+// git add README.md
+// git commit -m "first commit"
+// git branch -M main
+// git remote add origin https://github.com/MuhammadImranBrohi/Alumni_management_system.git
+// git push -u origin main
 
-// route for role assign
-Route::get('/role-assign', function () {
-    return view('alumni-admin.role-assign'); // index.blade.php
-})->name('role-assign');
+// https://github.com/MuhammadImranBrohi/Alumni_management_system.git
+
+// git remote add origin https://github.com/MuhammadImranBrohi/Alumni_management_system.git
+// git branch -M main
+// git push -u origin main

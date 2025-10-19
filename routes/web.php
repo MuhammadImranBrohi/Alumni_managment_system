@@ -68,3 +68,6 @@ repository as the origin, and push the changes to the remote repository. */
 // git remote add origin https://github.com/MuhammadImranBrohi/Alumni_management_system.git
 // git branch -M main
 // git push -u origin main
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
